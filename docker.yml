@@ -1,0 +1,59 @@
+- name: Configure docker with guest
+  hosts: default
+  become: True
+  tasks:
+    - name: install pip
+      apt: name=python-pip state=installed update_cache=yes
+
+    - name: install docker-py
+      pip: name=docker-py
+
+    - name: install apt-transport-https
+      apt: name=apt-transport-https update_cache=yes
+
+    - name: install ca-certificates
+      apt: name=ca-certificates update_cache=yes
+
+    - name: install curl
+      apt: name=curl update_cache=yes
+
+    - name: install software-properties-common
+      apt: name=software-properties-common
+
+    - name: Add Docker APT key (alternative for older Ubuntu systems without SNI).
+      shell: "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
+      args:
+        warn: false
+      become: true
+
+    - name: add docker repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu trusty stable
+        state: present
+      become: true
+
+    - name: install docker
+      apt: name=docker-ce update_cache=yes
+
+    - name:  add vagrant user to docker group
+      user:
+        name: vagrant
+        groups: docker
+        append: yes
+
+    - name: start docker
+      service: name=docker enabled=yes state=started
+
+    - name: create alpine docker container
+      docker_image:
+        docker_api_version: 1.18
+        name: bp
+        path: /vagrant/docker
+        state: present
+
+    - name: create nginx container
+      docker:
+        name: nginx_alpine
+        image: bp
+        ports: 8081:8081
+        state: started
