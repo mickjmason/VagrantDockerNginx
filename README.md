@@ -11,4 +11,38 @@ Finally, it will install and configure nginx in the container, such that the hos
 REQUIREMENTS
 ------------
 Vagrant (1.8.1 was used to test this configuration)
-VirtualBox
+VirtualBox (5.0.40_Ubuntu used to test this configuration)
+Testinfra (1.10.1 used to test this configuration)
+
+This was tested on Ubuntu 16.04, and different version of the above packages may be required on other distros.
+
+BUILDING THE ENVIRONMENT
+------------------------
+Clone this repository:
+  $ git clone https://github.com/mickjmason/VagrantDockerNginx.git
+
+Change to the application folder:
+  $ cd VagrantDockerNginx
+  
+Start the Vagrant machine:
+  $ vagrant up
+  
+ACCESSING THE HOSTED PAGE
+-------------------------
+
+The static content can be access at http://localhost:18081
+
+TESTING THE ENVIRONMENT
+-----------------------
+
+From the VagrantDockerNginx directory, run the run-tests.sh script:
+  $ ./run-tests.sh
+  
+The tests check for the following:
+The Vagrant host is listening on port 18081
+Docker is installed and running on Vagrant guest
+Docker host is listening on port 18081
+Docker guest is running Alpine Linux
+Nginx is running on Docker guest
+
+
