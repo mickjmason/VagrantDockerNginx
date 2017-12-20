@@ -1,6 +1,1 @@
-{
-  "tests/remote-tests.py::test_docker_installed_and_running[paramiko://default]": true, 
-  "tests/remote-tests.py::test_docker_is_running_alpine_linux[paramiko://default]": true, 
-  "tests/remote-tests.py::test_nginx_is_running_in_container[paramiko://default]": true, 
-  "tests/remote-tests.py::test_nginx_site_is_available_locally[paramiko://default]": true
-}
+{}
