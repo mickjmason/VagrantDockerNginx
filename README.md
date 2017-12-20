@@ -11,7 +11,9 @@ Finally, it will install and configure nginx in the container, such that the hos
 REQUIREMENTS
 ------------
 Vagrant (1.8.1 was used to test this configuration)
+
 VirtualBox (5.0.40_Ubuntu used to test this configuration)
+
 Testinfra (1.10.1 used to test this configuration)
 
 This was tested on Ubuntu 16.04, and different version of the above packages may be required on other distros.
