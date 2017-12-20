@@ -10,7 +10,7 @@ ADD nginx.conf /etc/nginx/sites-available/default/nginx.conf
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 RUN sed -i '$i\ \ \ \ \ \ \ \ include /etc/nginx/sites-enabled/default/*.*;' /etc/nginx/nginx.conf
 RUN mkdir -p /run/nginx
-EXPOSE 8081
+EXPOSE 18081
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 
 
