@@ -4,7 +4,7 @@ Nginx running in an Alpine linux container, in a VirutalBox VM configured via An
 OVERVIEW
 --------
 
-When executed, the code in this repository will use Vagrant to build an Ubuntu (Trusty) VirtualBox VM
+When executed, the code in this repository will use Vagrant to build an Ubuntu (Trusty) VirtualBox VM.
 It will then use Ansible to configure the VM with Docker, and create a new container based on Apline linux.
 Finally, it will install and configure nginx in the container, such that the hosted page can be viewed from the originating machine, at http://localhost:18081
 
@@ -16,7 +16,7 @@ VirtualBox (5.0.40_Ubuntu used to test this configuration)
 
 Testinfra (1.10.1 used to test this configuration)
 
-This was tested on Ubuntu 16.04, and different version of the above packages may be required on other distros.
+This was tested on Ubuntu 16.04, and different versions of the above packages may be required on other distros.
 
 BUILDING THE ENVIRONMENT
 ------------------------
