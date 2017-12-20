@@ -21,12 +21,15 @@ This was tested on Ubuntu 16.04, and different versions of the above packages ma
 BUILDING THE ENVIRONMENT
 ------------------------
 Clone this repository:
+
   $ git clone https://github.com/mickjmason/VagrantDockerNginx.git
 
 Change to the application folder:
+
   $ cd VagrantDockerNginx
   
 Start the Vagrant machine:
+
   $ vagrant up
   
 ACCESSING THE HOSTED PAGE
@@ -38,6 +41,7 @@ TESTING THE ENVIRONMENT
 -----------------------
 
 From the VagrantDockerNginx directory, run the run-tests.sh script:
+
   $ ./run-tests.sh
   
 The tests check for the following:
