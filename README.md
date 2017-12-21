@@ -45,10 +45,15 @@ From the VagrantDockerNginx directory, run the run-tests.sh script:
   $ ./run-tests.sh
   
 The tests check for the following:
+
 The Vagrant host is listening on port 18081
+
 Docker is installed and running on Vagrant guest
+
 Docker host is listening on port 18081
+
 Docker guest is running Alpine Linux
+
 Nginx is running on Docker guest
 
 
